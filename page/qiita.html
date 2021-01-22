@@ -14,7 +14,6 @@
 <script>
 function PostString()
 {
-    document.getElementById( "result" ).innerHTML = "PostString";
     const xhr = new XMLHttpRequest();
 
     //http://XXXXXXX.jp/test.php が今回呼び出すWebAPIを記述したphpファイル
@@ -32,5 +31,6 @@ function PostString()
             document.getElementById( "result" ).innerText = xhr.readyState + ":" + xhr.status;
         };
     }
+    document.getElementById( "result" ).innerHTML = "PostString";
 }
 </script>
