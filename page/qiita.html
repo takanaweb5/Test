@@ -29,8 +29,8 @@ function PostString()
             document.getElementById( "result" ).innerHTML = xhr.responseText;
         } else {
             document.getElementById( "result" ).innerText = xhr.readyState + ":" + xhr.status;
+            document.getElementById( "result" ).innerHTML = "PostString";
         };
     }
-    document.getElementById( "result" ).innerHTML = "PostString";
 }
 </script>
