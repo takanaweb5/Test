@@ -7,7 +7,7 @@
 <body>
 <input type="text" id="input_message">
 <button onclick="PostString()">WebAPI実行</button>
-<div id="result">ここにWebAPIの結果が入ります</div>
+<div id="result">ここにWebAPIの結果が入ります!!</div>
 </body>
 </html>
 
@@ -17,17 +17,19 @@ function PostString()
     const xhr = new XMLHttpRequest();
 
     //http://XXXXXXX.jp/test.php が今回呼び出すWebAPIを記述したphpファイル
-    xhr.open('POST', 'http://takana.web5.jp/test/test.php');
+    xhr.open('POST', 'http://takana.web5.jp/test/test.php',false );
 
     //文字列を引数にしてWebAPIを実行する(日本語も可能です)
     const msg = document.getElementById("input_message").value;
     xhr.send(msg);
+    document.getElementById( "result" ).innerHTML = xhr.responseText;
+
     xhr.onreadystatechange = function() 
     {
         if(xhr.readyState === 4 && xhr.status === 200)
         {
             document.getElementById( "result" ).innerHTML = xhr.responseText;
-        } else {
+        } else{
             document.getElementById( "result" ).innerText = xhr.readyState + ":" + xhr.status;
         };
     }
