@@ -17,7 +17,8 @@ function PostString()
     const xhr = new XMLHttpRequest();
 
     //http://XXXXXXX.jp/test.php が今回呼び出すWebAPIを記述したphpファイル
-    xhr.open('POST', '//takana.web5.jp/test/test.php',true );
+//    xhr.open('POST', '//takana.web5.jp/test/test.php',true );
+    xhr.open('POST', 'https://takanatesta1.page.link/V9Hh',true );
 
     //文字列を引数にしてWebAPIを実行する(日本語も可能です)
     const msg = document.getElementById("input_message").value;
