@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style></style>
+</head>
+<body>
+<div id="result">ここにIPが入ります</div>
+</body>
+</html>
+
+<script>
+  function recordData (data) {
+    console.log(data.ip, data.country);
+    document.getElementById( "result" ).innerHTML = data.ip;
+  }
+</script>
+<script src="http://ipinfo.io/json?callback=recordData"></script>
