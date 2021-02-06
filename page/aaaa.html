@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style></style>
+</head>
+<body>
+<input type="text" id="input_message">
+<button onclick="PostString()">WebAPI実行</button>
+<div id="result">ここにWebAPIの結果が入ります</div>
+</body>
+</html>
+
+<script>
+function PostString()
+{
+    const xhr = new XMLHttpRequest();
+
+    //http://XXXXXXX.jp/test.php が今回呼び出すWebAPIを記述したphpファイル
+    xhr.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
+
+    //文字列を引数にしてWebAPIを実行する(日本語も可能です)
+    const msg = document.getElementById("input_message").value;
+    xhr.send(msg);
+    xhr.onreadystatechange = function() 
+    {
+        if(xhr.readyState === 4 && xhr.status === 200)
+        {
+            document.getElementById( "result" ).innerHTML = xhr.responseText;
+        };
+    }
+}
+</script>
