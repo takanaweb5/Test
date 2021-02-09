@@ -13,8 +13,7 @@
 <script>
 function main()
 {
-    alert('aaa');
-    const ip = '';
+    let ip = '';
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://ipinfo.io/ip');
     xhr.send(null);
@@ -24,7 +23,6 @@ function main()
         } else {
             ip = '0.0.0.0';
         }
-        alert(ip);
         const xhr2 = new XMLHttpRequest();
         const array = [ip, window.location.href, window.document.referrer, window.navigator.userAgent]
         xhr2.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
