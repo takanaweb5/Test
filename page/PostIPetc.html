@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style></style>
+</head>
+<body>
+<button onclick="main()">WebAPI実行</button>
+<div id="result">ここに結果が入ります</div>
+</body>
+</html>
+
+<script>
+function main()
+{
+    const ip = '';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://ipinfo.io/ip');
+    xhr.send(null);
+    xhr.onloadend = function() {
+        if (xhr.status === 200) {
+            ip = xhr.responseText;
+        } else {
+            ip = '0.0.0.0';
+        }
+        const xhr2 = new XMLHttpRequest();
+        const array = [ip, window.location.href, window.document.referrer, window.navigator.userAgent]
+        xhr2.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
+        xhr2.send(array.join('\t'));
+    }
+}
+</script>
