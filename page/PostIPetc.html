@@ -23,10 +23,10 @@ function main()
         } else {
             ip = '0.0.0.0';
         }
-        const xhr2 = new XMLHttpRequest();
+//         const xhr2 = new XMLHttpRequest();
         const array = [ip, window.location.href, document.referrer, window.navigator.userAgent]
-        xhr2.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
-        xhr2.send(array.join('\t'));
+        xhr.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
+        xhr.send(array.join('\t'));
     }
 }
 </script>
