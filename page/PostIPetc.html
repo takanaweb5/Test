@@ -23,10 +23,12 @@ function main()
         } else {
             ip = '0.0.0.0';
         }
-//         const xhr2 = new XMLHttpRequest();
-        const array = [ip, window.location.href, document.referrer, window.navigator.userAgent]
-        xhr.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
-        xhr.send(array.join('\t'));
+        const xhr2 = new XMLHttpRequest();
+        const array = [ip, window.location.href, window.document.referrer, window.navigator.userAgent]
+        //JSONにエンコード
+        const json_text = JSON.stringify(array);
+        xhr2.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
+        xhr2.send(json_text);
     }
 }
 </script>
