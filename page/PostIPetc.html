@@ -23,10 +23,10 @@ function main()
         } else {
             ip = '0.0.0.0';
         }
-        const xhr2 = new XMLHttpRequest();
-        const array = [ip, window.location.href, window.document.referrer, window.navigator.userAgent]
         //JSONにエンコード
+        const array = [ip, window.location.href, window.document.referrer, window.navigator.userAgent]
         const json_text = JSON.stringify(array);
+        const xhr2 = new XMLHttpRequest();
         xhr2.open('POST', 'https://asia-northeast2-noted-robot-300713.cloudfunctions.net/APIPass');
         xhr2.send(json_text);
     }
