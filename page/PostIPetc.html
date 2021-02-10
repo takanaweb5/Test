@@ -15,7 +15,7 @@ function main()
 {
     let ip = '';
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://ipinfo.io2/ip');
+    xhr.open('GET', 'https://ipinfo.io/ip');
     xhr.send(null);
     xhr.onloadend = function() {
         if (xhr.status === 200) {
